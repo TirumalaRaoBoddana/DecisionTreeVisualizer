@@ -1,8 +1,8 @@
+dtreeviz
+graphviz
 streamlit
 pandas
 scikit-learn
 matplotlib
-dtreeviz
-graphviz
 numpy
 
