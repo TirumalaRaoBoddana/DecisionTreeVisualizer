@@ -82,8 +82,10 @@ if uploaded_file is not None:
                 if(option=="Decision Tree with Distributions"):
                     #visualizing the decision tree
                     v=viz_model.view(scale=2)
-                    svg_code = v.svg()  # Generate the SVG code for the tree
-                    st.markdown(f'<div>{svg_code}</div>', unsafe_allow_html=True)
+                    with open("tree.svg", "w") as f:
+                        f.write(v.svg())
+                    # Display the SVG file
+                    st.image("tree.svg", format="svg")
                 elif(option=="Without Distributions"):
                     #visualizing the decision tree
                     v=viz_model.view(scale=2,fancy=False)
