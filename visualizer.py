@@ -25,7 +25,7 @@ col1, col2 = st.sidebar.columns([1, 6])
 with col1:
     st.image('tree.png', width=50)  
 with col2:
-    st.title("Decision Tree Visualizer")
+    st.header("Decision Tree Visualizer")
 
 # Type of Decision Tree (Classifier or Regressor)
 type = st.sidebar.selectbox("Select Type of the Decision Tree", options=["Decision Tree Classifier", "Decision Tree Regressor"])
