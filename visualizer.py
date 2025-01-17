@@ -103,7 +103,7 @@ if uploaded_file is not None:
                         st.write(df[input_columns].iloc[index].to_dict())
                     with col2:
                         st.write("Actual value: ")
-                        st.write(df[output_column].iloc[index])
+                        st.write(y[index])
                     with col3:
                         st.write("Predicted Value")
                         st.write(dtc.predict([np.array(X.iloc[index,:])])[0])
@@ -120,7 +120,7 @@ if uploaded_file is not None:
                         st.write(df[input_columns].iloc[index].to_dict())
                     with col2:
                         st.write("Actual value: ")
-                        st.write(df[output_column].iloc[index])
+                        st.write(y[index])
                     with col3:
                         st.write("Predicted Value")
                         st.write(dtc.predict([np.array(X.iloc[index,:])])[0])
