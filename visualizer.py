@@ -83,7 +83,7 @@ if uploaded_file is not None:
                     #visualizing the decision tree
                     v=viz_model.view(scale=2)
                     svg_code = v.svg()  # Generate the SVG code for the tree
-                    st.image(svg_code, format="svg")  # Display the SVG in the Streamlit app
+                    st.markdown(f'<div>{svg_code}</div>', unsafe_allow_html=True)
                 elif(option=="Without Distributions"):
                     #visualizing the decision tree
                     v=viz_model.view(scale=2,fancy=False)
