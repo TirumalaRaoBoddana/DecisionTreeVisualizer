@@ -234,3 +234,10 @@ else:
 
     Whether you're learning about decision trees or need a quick way to explore them, this app provides an easy-to-use and informative interface for understanding the decision-making process of decision trees.
     """)
+st.markdown(
+    """
+    <footer style="text-align:center; padding-top: 20px; font-size: 14px; color: gray;">
+        Made with ❤️ by Thiru
+    </footer>
+    """, unsafe_allow_html=True
+)
