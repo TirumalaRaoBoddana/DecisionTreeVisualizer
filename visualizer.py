@@ -82,12 +82,11 @@ if uploaded_file is not None:
                 if(option=="Decision Tree with Distributions"):
                     #visualizing the decision tree
                     v=viz_model.view(scale=2)
-                    png_file = "tree.png"
-                    v.save(png_file)  # Save the visualization as a PNG
-                    
-                    # Display PNG in Streamlit
-                    st.image(png_file, caption="Decision Tree Visualization", use_column_width=True)
-
+                    svg_file = "tree.svg"
+                    with open(svg_file, "w") as f:
+                        f.write(v.svg())  # Save the tree as SVG content
+                    # Provide a download link for the user
+                    st.markdown(f'<a href="data:file/svg+xml;base64,{b64encode(open(svg_file, "rb").read()).decode()}" download="{svg_file}">Download Decision Tree SVG</a>', unsafe_allow_html=True)
                 elif(option=="Without Distributions"):
                     #visualizing the decision tree
                     v=viz_model.view(scale=2,fancy=False)
