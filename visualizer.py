@@ -83,7 +83,7 @@ if uploaded_file is not None:
                 if(option=="Decision Tree with Distributions"):
                     #visualizing the decision tree
                     v=viz_model.view(scale=2)
-                    svg_file = "tree.svg"
+                    svg_file = "Decision Tree with distributions.svg"
                     with open(svg_file, "w") as f:
                         f.write(v.svg())  # Save the tree as SVG content
                     # Provide a download link for the user
@@ -91,7 +91,7 @@ if uploaded_file is not None:
                 elif(option=="Without Distributions"):
                     #visualizing the decision tree
                     v=viz_model.view(scale=2,fancy=False)
-                    svg_file = "tree.svg"
+                    svg_file = "Decision Tree without Distributions.svg"
                     with open(svg_file, "w") as f:
                         f.write(v.svg())  # Save the tree as SVG content
                     # Provide a download link for the user
@@ -108,7 +108,7 @@ if uploaded_file is not None:
                         st.write("Predicted Value")
                         st.write(dtc.predict([np.array(X.iloc[index,:])])[0])
                     v=viz_model.view(scale=2,x=X.iloc[index,:])
-                    svg_file = "tree.svg"
+                    svg_file = "Decision Tree Path.svg"
                     with open(svg_file, "w") as f:
                         f.write(v.svg())  # Save the tree as SVG content
                     # Provide a download link for the user
@@ -125,7 +125,7 @@ if uploaded_file is not None:
                         st.write("Predicted Value")
                         st.write(dtc.predict([np.array(X.iloc[index,:])])[0])
                     v=viz_model.view(scale=2,x=X.iloc[index,:],show_just_path=True)
-                    svg_file = "tree.svg"
+                    svg_file = "Decision Tree only path.svg"
                     with open(svg_file, "w") as f:
                         f.write(v.svg())  # Save the tree as SVG content
                     # Provide a download link for the user
@@ -174,7 +174,7 @@ if uploaded_file is not None:
                 if(option=="Decision Tree with Distributions"):
                     #visualizing the decision tree
                     v=viz_model.view(scale=2)
-                    svg_file = "tree.svg"
+                    svg_file = "Regression Tree with Distributions.svg"
                     with open(svg_file, "w") as f:
                         f.write(v.svg())  # Save the tree as SVG content
                     # Provide a download link for the user
@@ -182,7 +182,7 @@ if uploaded_file is not None:
                 elif(option=="Without Distributions"):
                     #visualizing the decision tree
                     v=viz_model.view(scale=2,fancy=False)
-                    svg_file = "tree.svg"
+                    svg_file = "Regression Tree without distribution.svg"
                     with open(svg_file, "w") as f:
                         f.write(v.svg())  # Save the tree as SVG content
                     # Provide a download link for the user
@@ -199,7 +199,7 @@ if uploaded_file is not None:
                         st.write("Predicted Value")
                         st.write(dtr.predict([np.array(X.iloc[index,:])])[0])
                     v=viz_model.view(scale=2,x=X.iloc[index,:])
-                    svg_file = "tree.svg"
+                    svg_file = "Regression Tree Path.svg"
                     with open(svg_file, "w") as f:
                         f.write(v.svg())  # Save the tree as SVG content
                     # Provide a download link for the user
@@ -216,7 +216,7 @@ if uploaded_file is not None:
                         st.write("Predicted Value")
                         st.write(dtr.predict([np.array(X.iloc[index,:])])[0])
                     v=viz_model.view(scale=2,x=X.iloc[index,:],show_just_path=True)
-                    svg_file = "tree.svg"
+                    svg_file = "Regression Tree only path.svg"
                     with open(svg_file, "w") as f:
                         f.write(v.svg())  # Save the tree as SVG content
                     # Provide a download link for the user
