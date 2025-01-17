@@ -91,7 +91,11 @@ if uploaded_file is not None:
                 elif(option=="Without Distributions"):
                     #visualizing the decision tree
                     v=viz_model.view(scale=2,fancy=False)
-                    v.show()
+                    svg_file = "tree.svg"
+                    with open(svg_file, "w") as f:
+                        f.write(v.svg())  # Save the tree as SVG content
+                    # Provide a download link for the user
+                    st.markdown(f'<a href="data:file/svg+xml;base64,{b64encode(open(svg_file, "rb").read()).decode()}" download="{svg_file}">Download Decision Tree SVG</a>', unsafe_allow_html=True)
                 elif(option=="Show path for instance in decision tree"):
                     col1,col2,col3=st.columns(3)
                     with col1:
@@ -104,7 +108,11 @@ if uploaded_file is not None:
                         st.write("Predicted Value")
                         st.write(dtc.predict([np.array(X.iloc[index,:])])[0])
                     v=viz_model.view(scale=2,x=X.iloc[index,:])
-                    v.show()
+                    svg_file = "tree.svg"
+                    with open(svg_file, "w") as f:
+                        f.write(v.svg())  # Save the tree as SVG content
+                    # Provide a download link for the user
+                    st.markdown(f'<a href="data:file/svg+xml;base64,{b64encode(open(svg_file, "rb").read()).decode()}" download="{svg_file}">Download Decision Tree SVG</a>', unsafe_allow_html=True)
                 elif(option=="only path"):
                     col1,col2,col3=st.columns(3)
                     with col1:
@@ -117,7 +125,11 @@ if uploaded_file is not None:
                         st.write("Predicted Value")
                         st.write(dtc.predict([np.array(X.iloc[index,:])])[0])
                     v=viz_model.view(scale=2,x=X.iloc[index,:],show_just_path=True)
-                    v.show()
+                    svg_file = "tree.svg"
+                    with open(svg_file, "w") as f:
+                        f.write(v.svg())  # Save the tree as SVG content
+                    # Provide a download link for the user
+                    st.markdown(f'<a href="data:file/svg+xml;base64,{b64encode(open(svg_file, "rb").read()).decode()}" download="{svg_file}">Download Decision Tree SVG</a>', unsafe_allow_html=True)
     elif type == "Decision Tree Regressor":
         input_columns=st.multiselect("Select input columns: ",options=df.columns)
         output_column=st.selectbox("select output column: ",options=df.columns)
@@ -162,11 +174,19 @@ if uploaded_file is not None:
                 if(option=="Decision Tree with Distributions"):
                     #visualizing the decision tree
                     v=viz_model.view(scale=2)
-                    v.show()
+                    svg_file = "tree.svg"
+                    with open(svg_file, "w") as f:
+                        f.write(v.svg())  # Save the tree as SVG content
+                    # Provide a download link for the user
+                    st.markdown(f'<a href="data:file/svg+xml;base64,{b64encode(open(svg_file, "rb").read()).decode()}" download="{svg_file}">Download Decision Tree SVG</a>', unsafe_allow_html=True)
                 elif(option=="Without Distributions"):
                     #visualizing the decision tree
                     v=viz_model.view(scale=2,fancy=False)
-                    v.show()
+                    svg_file = "tree.svg"
+                    with open(svg_file, "w") as f:
+                        f.write(v.svg())  # Save the tree as SVG content
+                    # Provide a download link for the user
+                    st.markdown(f'<a href="data:file/svg+xml;base64,{b64encode(open(svg_file, "rb").read()).decode()}" download="{svg_file}">Download Decision Tree SVG</a>', unsafe_allow_html=True)
                 elif(option=="Show path for instance in decision tree"):
                     col1,col2,col3=st.columns(3)
                     with col1:
@@ -179,7 +199,11 @@ if uploaded_file is not None:
                         st.write("Predicted Value")
                         st.write(dtr.predict([np.array(X.iloc[index,:])])[0])
                     v=viz_model.view(scale=2,x=X.iloc[index,:])
-                    v.show()
+                    svg_file = "tree.svg"
+                    with open(svg_file, "w") as f:
+                        f.write(v.svg())  # Save the tree as SVG content
+                    # Provide a download link for the user
+                    st.markdown(f'<a href="data:file/svg+xml;base64,{b64encode(open(svg_file, "rb").read()).decode()}" download="{svg_file}">Download Decision Tree SVG</a>', unsafe_allow_html=True)
                 elif(option=="only path"):
                     col1,col2,col3=st.columns(3)
                     with col1:
@@ -192,7 +216,11 @@ if uploaded_file is not None:
                         st.write("Predicted Value")
                         st.write(dtr.predict([np.array(X.iloc[index,:])])[0])
                     v=viz_model.view(scale=2,x=X.iloc[index,:],show_just_path=True)
-                    v.show()
+                    svg_file = "tree.svg"
+                    with open(svg_file, "w") as f:
+                        f.write(v.svg())  # Save the tree as SVG content
+                    # Provide a download link for the user
+                    st.markdown(f'<a href="data:file/svg+xml;base64,{b64encode(open(svg_file, "rb").read()).decode()}" download="{svg_file}">Download Decision Tree SVG</a>', unsafe_allow_html=True)
 else:
     st.title("Decision Tree Visualizer")
     st.markdown("""
