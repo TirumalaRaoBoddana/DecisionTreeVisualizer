@@ -8,6 +8,7 @@ from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
 from sklearn.preprocessing import LabelEncoder
 from graphviz.backend import render
 import numpy as np
+from base64 import b64encode
 #encoding the categorical input into numerical values using the standard scalar
 def encode_input(df,input_columns,output_column):
     input_data=df[input_columns]
