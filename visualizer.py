@@ -9,6 +9,11 @@ from sklearn.preprocessing import LabelEncoder
 import numpy as np
 from base64 import b64encode
 #encoding the categorical input into numerical values using the standard scalar
+try:
+    output = subprocess.run(["dot", "-V"], capture_output=True, text=True)
+    st.write(f"Graphviz is installed: {output.stdout}")
+except FileNotFoundError:
+    st.error("Graphviz is not installed or not available in PATH.")
 def encode_input(df,input_columns,output_column):
     input_data=df[input_columns]
     output_data=df[output_column]
