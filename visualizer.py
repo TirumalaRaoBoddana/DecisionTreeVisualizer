@@ -8,6 +8,7 @@ from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
 from base64 import b64encode
+import subprocess
 #encoding the categorical input into numerical values using the standard scalar
 try:
     output = subprocess.run(["dot", "-V"], capture_output=True, text=True)
